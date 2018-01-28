@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import { FoldersTreeService } from '../folders-tree/shared/folders-tree.service';
+import { FoldersTreeComponent } from '../folders-tree/folders-tree.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FoldersTreeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [FoldersTreeService],
+  bootstrap: [AppComponent, FoldersTreeComponent]
 })
 export class AppModule { }

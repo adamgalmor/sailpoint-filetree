@@ -6,6 +6,7 @@ import { Folder } from '../../shared/models/folder';
 // import { Promise } from 'q';
 // import {*} from 'rxjs';
 import 'rxjs/add/operator/map'
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class FoldersTreeService {
   constructor(private http: Http) { }
@@ -28,11 +29,14 @@ export class FoldersTreeService {
   //   return this.http.get(`/data/${folder_id}/.json`).toPromise();
   // }
 
-  public getFolders(folder_id=null){
+  public getFolders(folder_id=null):Observable<Folder[]>{
     if (!folder_id)
       folder_id = "server";  
     let url = `/assets/data/${folder_id}.json`;
-    return this.http.get(url)
+    
+     return this.http.get(url) 
+      .map(res => res.json());
+    // return this.http.get(url)
     // .map((respone:Response) =>{
     //   debugger;
     //   respone.json();

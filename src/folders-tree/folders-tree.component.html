@@ -5,4 +5,4 @@
     </li>
   </ul>
 </div> -->
-<tree-root [nodes]="nodes" [options]="options"></tree-root>
+<tree-root #tree [nodes]="folders" [options]="options" (activate)="onActivate($event)"></tree-root>

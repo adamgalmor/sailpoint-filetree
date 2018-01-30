@@ -1,0 +1,30 @@
+<div class="checkbox">
+    <label>
+        <input type="checkbox"
+            (change)="showHideDeleted($event)"
+            [checked]="false">
+          Show Deleted Files
+    </label>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Size</th>
+                  <th>isDeleted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let file of files">
+                  <td *ngIf="file.isDeleted == isDeleted">{{file.name}}</td>
+                  <td *ngIf="file.isDeleted == isDeleted">{{file.type}}</td>                    
+                  <td *ngIf="file.isDeleted == isDeleted">{{file.size}}</td>
+                  <td *ngIf="file.isDeleted == isDeleted">{{file.isDeleted}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

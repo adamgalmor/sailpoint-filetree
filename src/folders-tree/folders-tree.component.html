@@ -1,8 +1,1 @@
-<!-- <div id="ftree">
-  <ul>
-    <li ng-repeat="folder in root_folders" data-id="{{folder.id}}">
-        {{folder.name}}
-    </li>
-  </ul>
-</div> -->
 <tree-root #tree [nodes]="folders" [options]="options" (activate)="onActivate($event)"></tree-root>

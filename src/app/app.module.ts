@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FoldersTreeService } from '../folders-tree/shared/folders-tree.service';
 import { FoldersTreeComponent } from '../folders-tree/folders-tree.component';
@@ -21,6 +19,7 @@ import { GlobalService } from '../shared/services/global.service';
     HttpModule,
     TreeModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [FoldersTreeService, GlobalService],
   bootstrap: [AppComponent, FoldersTreeComponent, FilesGridComponent]
 })

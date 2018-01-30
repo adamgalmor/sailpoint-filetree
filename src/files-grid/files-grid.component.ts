@@ -10,10 +10,11 @@ import { File } from '../shared/models';
   templateUrl: './files-grid.component.html',
   styleUrls: ['./files-grid.component.scss']
 })
+
 export class FilesGridComponent implements OnInit, OnDestroy {
   public files:File[] = [];
   public selectedFolderSubscription: Subscription;
-  private isDeleted: boolean = false;
+  private showDeleted: boolean = false;
 
   constructor(private globalService:GlobalService) { }
 
@@ -28,6 +29,6 @@ export class FilesGridComponent implements OnInit, OnDestroy {
   }
 
   private showHideDeleted($event){
-    this.isDeleted = $event.target.checked;
+    this.showDeleted = $event.target.checked;
   }
 }

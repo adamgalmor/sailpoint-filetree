@@ -19,10 +19,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let file of files">
-                  <td *ngIf="file.isDeleted == isDeleted">{{file.name}}</td>
-                  <td *ngIf="file.isDeleted == isDeleted">{{file.type}}</td>                    
-                  <td *ngIf="file.isDeleted == isDeleted">{{file.size}}</td>
-                  <td *ngIf="file.isDeleted == isDeleted">{{file.isDeleted}}</td>
+                    <td *ngIf="showDeleted == true">{{file.name}}</td>
+                    <td *ngIf="showDeleted == true">{{file.type}}</td>                    
+                    <td *ngIf="showDeleted == true">{{file.size}}</td>
+                    <td *ngIf="showDeleted == true">{{file.isDeleted}}</td>
+                    <td *ngIf="file.isDeleted == showDeleted && showDeleted == false">{{file.name}}</td>
+                    <td *ngIf="file.isDeleted == showDeleted && showDeleted == false">{{file.type}}</td>                    
+                    <td *ngIf="file.isDeleted == showDeleted && showDeleted == false">{{file.size}}</td>
+                    <td *ngIf="file.isDeleted == showDeleted && showDeleted == false">{{file.isDeleted}}</td>
                 </tr>
             </tbody>
         </table>

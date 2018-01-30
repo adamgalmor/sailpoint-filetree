@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FoldersTreeService } from '../folders-tree/shared/folders-tree.service';
 import { FoldersTreeComponent } from '../folders-tree/folders-tree.component';
 import { HttpModule } from '@angular/http';
+import { TreeModule } from 'angular-tree-component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    TreeModule
   ],
   providers: [FoldersTreeService],
   bootstrap: [AppComponent, FoldersTreeComponent]

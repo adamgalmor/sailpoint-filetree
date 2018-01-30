@@ -1,3 +1,8 @@
-<p>
-  folders-tree works!
-</p>
+<!-- <div id="ftree">
+  <ul>
+    <li ng-repeat="folder in root_folders" data-id="{{folder.id}}">
+        {{folder.name}}
+    </li>
+  </ul>
+</div> -->
+<tree-root [nodes]="nodes" [options]="options"></tree-root>
